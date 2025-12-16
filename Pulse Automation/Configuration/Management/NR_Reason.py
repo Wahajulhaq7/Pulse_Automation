@@ -93,13 +93,13 @@ try:
     print("✍️ Entering Reason Code...")
     wait.until(EC.visibility_of_element_located(
         (By.XPATH, "//input[@formcontrolname='reasonCode']")
-    )).send_keys("NR001")
+    )).send_keys("001")
 
     print("✍️ Entering Reason Name...")
     wait.until(EC.visibility_of_element_located(
         (By.XPATH, "//input[@formcontrolname='reasonName']")
     )).send_keys("Not Reachable - Automation")
-
+    time.sleep(10)
     # ================= CLICK LAST "Add" BUTTON =================
     print("✅ Clicking the final 'Add' button...")
     wait = WebDriverWait(driver, 10)
@@ -112,9 +112,5 @@ except TimeoutException as e:
     print("❌ Timeout Error:", e)
 
 finally:
-    # The `time.sleep(5)` function call in the code is causing the program to pause execution for 5
-    # seconds. This is a common technique used in automation scripts to introduce delays between
-    # actions, allowing time for elements to load or for certain processes to complete before
-    # proceeding with the next steps.
     time.sleep(5)
     # driver.quit()
